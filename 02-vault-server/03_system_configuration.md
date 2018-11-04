@@ -44,9 +44,6 @@ EOF
 # Install some programs we'll need later in the setup phase
 pacman -S vim zsh docker openssh sudo hdparm git htop
 
-# Create a user (some commands we'll run can't be ran as root)
-useradd -m -g users -G wheel -s /bin/zsh etienne
-
 # Set the root password
 passwd
 
