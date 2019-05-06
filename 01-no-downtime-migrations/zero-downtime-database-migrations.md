@@ -97,7 +97,7 @@ have been changed in `a` after being copied to `b`).
 ![no downtime database update step 3](./images/update_step_3.png "Deploying the final `v2` code")
 
 This deployment of `v2` reads and write from `b`, but it must not contain
-the migration that deletes `a`, otherwise, all `v1.alpha` will stop working at
+the migration that deletes `a`, otherwise, all `v2.alpha` will stop working at
 once, before `v2` actually started and some downtime will occur (see "worst
 case migration deployment")
 
