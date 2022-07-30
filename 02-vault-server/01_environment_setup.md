@@ -28,11 +28,7 @@ The procedure for online.net is described in [their
 documentation](https://documentation.online.net/en/dedicated-server/operating-system/custom-install/install-from-kvm-dedibox-xc).
 Make sure you're using the latest ArchLinux ISO they're providing you with.
 
-NOTE: (if iDRAC/KVM's not available it's also possible to create a temporarary
-OS installation (ArchLinux if possible) using your provider's setup tools that
-will be used to perform the installation on a small part of the first disk
-(let's say, the first 4GiBs) and then us this OS to bootstrap our layout, atop
-the remaining disk space.
+NOTE: if using KVM over IP or a similar turn key solution isn't possible, or if your provider charges you for KVM over IP, another solution exists: you can run a rescue OS (providers usually make that possible) on which you launch your installation ISO in a QEMU VM. The protocol is described [in this article](https://trick77.com/how-to-set-up-virtual-kvm-vnc-console-ovh-server/).
 
 NOTE2: if you have physical access to your machine, things are much simpler.
 Simply follow the standard procedure for [creating a bootable ArchLinux USB

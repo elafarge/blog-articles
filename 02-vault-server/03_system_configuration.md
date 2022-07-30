@@ -99,9 +99,7 @@ can remotely connect to our server and input the encryption key we set earlier.
 
 That requires some unofficial [packages from the Arch User
 Repository](https://wiki.archlinux.org/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition).
-We'll use
-[pakku](https://wiki.archlinux.org/index.php/AUR_helpers#Pacman_wrappers) to
-manage them. That also means we'll need to "sandbox" ourselves into non-root
+That means we'll need to "sandbox" ourselves into non-root
 user accounts to build them.
 ```shell
 useradd -m -g users -G wheel -s /bin/zsh yourname
@@ -198,7 +196,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="quiet nomodeset"
 # Let's enable the network interfaces and provide the UUID of the encrypted
 # RAID array to the Linux command line launched by the bootloader.
 # Run
-#   lsblk -o NAME:UUID
+#   lsblk -o NAME,UUID
 # to figure it out
 GRUB_CMDLINE_LINUX="ip=ip=:::::eth0:dhcp:ip=:::::eth1:dhcp cryptdevice=UUID=<the-uuid-of-your-encrypted-raid-array>:cryptoroot root=/dev/mapper/root-root rw"
 ```
@@ -218,4 +216,4 @@ microcode with `pacman -S intel-ucode`
 You'll be able to SSH onto your machine when it starts, enter the passphrase and
 decrypt the disks.
 
-[Step 4: setting up and iptables firewall](./04_iptables.md)
+[Step 4: setting up an iptables firewall](./04_iptables.md)

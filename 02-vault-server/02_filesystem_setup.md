@@ -446,8 +446,8 @@ pvcreate /dev/mapper/cryptoroot
 vgcreate root /dev/mapper/cryptoroot
 
 # And let's layer our PVs on top of
-lvcreate -L 8G root -n swap
-lvcreate -L 100G root -n root
+lvcreate -L 16G root -n swap
+lvcreate -L 256G root -n root
 lvcreate -l 100%FREE root -n data
 ```
 
@@ -466,8 +466,8 @@ mkfs.fat -F32 /dev/md/boot
 # And mount them
 swapon /dev/mapper/root-swap
 
-mount /dev/root/root /mnt
 mkdir -p /mnt/{boot,data}
+mount /dev/root/root /mnt
 mount /dev/root/data /mnt/data
 mount /dev/md/boot /mnt/boot
 
