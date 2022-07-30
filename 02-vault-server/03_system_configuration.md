@@ -5,7 +5,7 @@
 
 Let's install the target OS in the `/mnt` directory:
 ```shell
-pacstrap /mnt base base-devel
+pacstrap /mnt base base-devel linux linux-firmware
 ```
 
 ##### Generating `fstab`
